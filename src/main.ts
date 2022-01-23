@@ -11,6 +11,7 @@ async function bootstrap() {
     .setDescription('The Pemira KM ITB API')
     .setVersion('1.0')
     .build();
+  app.enableCors();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
