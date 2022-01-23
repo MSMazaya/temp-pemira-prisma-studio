@@ -5,5 +5,7 @@ export class FindManyBerkasCandidateDto {
   take?: number;
   cursor?: Prisma.BerkasCandidateWhereUniqueInput;
   where?: Prisma.BerkasCandidateWhereInput;
+  nim?: string;
+  password?: string;
   orderBy?: Prisma.BerkasCandidateOrderByWithRelationInput;
 }
