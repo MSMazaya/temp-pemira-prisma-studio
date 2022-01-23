@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'prisma.service';
-import { CreateBerkasCandidateDto } from './dto/create-berkas-candidate.dto';
-import { FindManyBerkasCandidateDto } from './dto/find-many-berkas-candidate.dto';
-import { FindOneBerkasCandidateDto } from './dto/find-one-berkas-candidate.dto';
-import { UpdateBerkasCandidateDto } from './dto/update-berkas-candidate.dto';
+import { Injectable } from "@nestjs/common";
+import { PrismaService } from "prisma.service";
+import { CreateBerkasCandidateDto } from "./dto/create-berkas-candidate.dto";
+import { FindManyBerkasCandidateDto } from "./dto/find-many-berkas-candidate.dto";
+import { FindOneBerkasCandidateDto } from "./dto/find-one-berkas-candidate.dto";
+import { UpdateBerkasCandidateDto } from "./dto/update-berkas-candidate.dto";
 
 @Injectable()
 export class BerkasCandidateService {
@@ -21,9 +21,13 @@ export class BerkasCandidateService {
       skip,
       take,
       cursor,
-      where: { 
-        nim,
-        password
+      where: {
+        nim: {
+          equals: nim,
+        },
+        password: {
+          equals: password,
+        },
       },
       orderBy,
     });
