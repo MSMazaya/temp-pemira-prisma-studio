@@ -2,16 +2,13 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
+  provider = "prisma-client-js"
 
 }
 
 datasource db {
-  provider             = "mysql"
-  url                  = env("DATABASE_URL")
-  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
-  referentialIntegrity = "prisma"
+  provider = "postgres"
+  url      = env("DATABASE_URL")
 }
 
 enum Role {
@@ -115,7 +112,6 @@ model BerkasUploaded {
   file_url            String
 }
 
-
 enum JenisBerkas {
   ALL
   MWAWM
@@ -123,10 +119,10 @@ enum JenisBerkas {
 }
 
 model Berkas {
-  id               Int              @id @default(autoincrement())
-  nama             String
-  jenis_berkas     JenisBerkas      @default(ALL)
-  BerkasUploaded   BerkasUploaded[]
+  id             Int              @id @default(autoincrement())
+  nama           String
+  jenis_berkas   JenisBerkas      @default(ALL)
+  BerkasUploaded BerkasUploaded[]
 }
 
 model BerkasAdmin {
