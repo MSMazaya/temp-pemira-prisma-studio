@@ -95,12 +95,19 @@ enum ProgressBerkas {
   SUDAH_MENGUMPULKAN
 }
 
+enum JenisCandidate {
+  MWAWM
+  K3M
+}
+
 model BerkasCandidate {
-  id             String           @id @default(uuid())
-  nim            String
-  password       String
-  progress       ProgressBerkas   @default(BELUM_MENGAMBIL)
-  BerkasUploaded BerkasUploaded[]
+  id              String           @id @default(uuid())
+  nim             String
+  name            String
+  password        String
+  progress        ProgressBerkas   @default(BELUM_MENGAMBIL)
+  jenis_candidate JenisCandidate   @default(K3M)
+  BerkasUploaded  BerkasUploaded[]
 }
 
 model BerkasUploaded {

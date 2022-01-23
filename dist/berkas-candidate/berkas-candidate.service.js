@@ -22,12 +22,15 @@ let BerkasCandidateService = class BerkasCandidateService {
         });
     }
     findAll(query) {
-        const { skip, take, cursor, where, orderBy } = query;
+        const { skip, take, cursor, nim, password, orderBy } = query;
         return this.prisma.berkasCandidate.findMany({
             skip,
             take,
             cursor,
-            where,
+            where: {
+                nim,
+                password
+            },
             orderBy,
         });
     }

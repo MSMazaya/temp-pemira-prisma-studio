@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { CreateBerkasDto } from './dto/create-berkas.dto';
-import { UpdateBerkasDto } from './dto/update-berkas.dto';
-import { PrismaService } from 'prisma.service';
-import { FindManyBerkasDto } from './dto/find-many-berkas.dto';
-import { FindOneBerkasDto } from './dto/find-one-berkas.dto';
+import { Injectable } from "@nestjs/common";
+import { CreateBerkasDto } from "./dto/create-berkas.dto";
+import { UpdateBerkasDto } from "./dto/update-berkas.dto";
+import { PrismaService } from "prisma.service";
+import { FindManyBerkasDto } from "./dto/find-many-berkas.dto";
+import { FindOneBerkasDto } from "./dto/find-one-berkas.dto";
 
 @Injectable()
 export class BerkasService {
@@ -35,13 +35,13 @@ export class BerkasService {
   update(id: number, data: UpdateBerkasDto) {
     return this.prisma.berkas.update({
       data,
-      where: { id },
+      where: { id: Number(id) },
     });
   }
 
   remove(id: number) {
     return this.prisma.berkas.delete({
-      where: { id },
+      where: { id: Number(id) },
     });
   }
 }
