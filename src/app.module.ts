@@ -11,6 +11,7 @@ import { VoteModule } from './vote/vote.module';
 import { BerkasModule } from './berkas/berkas.module';
 import { BerkasUploadedModule } from './berkas-uploaded/berkas-uploaded.module';
 import { BerkasCandidateModule } from 'berkas-candidate/berkas-candidate.module';
+import { BerkasAdminModule } from './berkas-admin/berkas-admin.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { BerkasCandidateModule } from 'berkas-candidate/berkas-candidate.module'
     BerkasCandidateModule,
     BerkasModule,
     BerkasUploadedModule,
+    BerkasAdminModule,
   ],
   controllers: [AppController],
   providers: [AppService],
