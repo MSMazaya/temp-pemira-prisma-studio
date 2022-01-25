@@ -29,8 +29,8 @@ export class BerkasAdminController {
   }
 
   @Get(":id")
-  findOne(@Query() query: FindOneBerkasAdminDto) {
-    return this.berkasAdminService.findOne(query);
+  findOne(@Param("id") id: string) {
+    return this.berkasAdminService.findOne(id);
   }
 
   @Patch(":id")

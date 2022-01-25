@@ -33,9 +33,9 @@ export class BerkasAdminService {
     });
   }
 
-  findOne(where: FindOneBerkasAdminDto) {
+  findOne(id: string) {
     return this.prisma.berkasAdmin.findUnique({
-      where,
+      where: { id },
     });
   }
 
